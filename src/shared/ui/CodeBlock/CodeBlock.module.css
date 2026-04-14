@@ -1,0 +1,129 @@
+.container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-surface-light);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.copyButton,
+.copyButtonFloat {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-darker);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-primary);
+}
+
+.copyButton:hover,
+.copyButtonFloat:hover {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border-color: var(--color-primary-light);
+}
+
+.codeWrapper {
+  position: relative;
+  display: flex;
+}
+
+.copyButtonFloat {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.codeWrapper:hover .copyButtonFloat {
+  opacity: 1;
+}
+
+.lineNumbers {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md) 0;
+  padding-left: var(--space-md);
+  user-select: none;
+}
+
+.lineNumber {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  text-align: right;
+  min-width: 2em;
+  padding-right: var(--space-sm);
+}
+
+.pre {
+  margin: 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+  flex: 1;
+  background: none !important;
+}
+
+.pre code {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  background: none !important;
+  padding: 0 !important;
+  border: none !important;
+  color: var(--color-text-primary);
+}
+
+/* --------------- Prism.js Tema Override --------------- */
+
+.container :global(.token.comment),
+.container :global(.token.prolog),
+.container :global(.token.doctype),
+.container :global(.token.cdata) {
+  color: var(--color-text-muted);
+}
+
+.container :global(.token.keyword),
+.container :global(.token.tag) {
+  color: var(--color-primary);
+}
+
+.container :global(.token.string),
+.container :global(.token.attr-value) {
+  color: var(--color-accent);
+}
+
+.container :global(.token.function) {
+  color: var(--color-primary-dark);
+}
+
+.container :global(.token.variable) {
+  color: var(--color-primary);
+}
+
+.container :global(.token.operator) {
+  color: var(--color-text-secondary);
+}
+
+.container :global(.token.number),
+.container :global(.token.boolean) {
+  color: var(--color-primary-light);
+}
