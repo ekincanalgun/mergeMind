@@ -1,0 +1,130 @@
+/* ============================================
+   UsagePanel - Kopyalanabilir Kullanım Kartları
+   ============================================ */
+
+.panel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-surface);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.3px;
+}
+
+.title svg {
+  stroke: var(--color-primary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-darker);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.item:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 1px rgba(230, 100, 20, 0.1);
+  background-color: rgba(230, 100, 20, 0.02);
+}
+
+.item:active {
+  transform: scale(0.995);
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.command {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+.copyArea {
+  flex-shrink: 0;
+  width: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copyHint {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.item:hover .copyHint {
+  opacity: 0.6;
+}
+
+.copiedBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #16a34a;
+  background-color: rgba(22, 163, 74, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  padding-left: 2px;
+}
+
+/* --------------- Responsive --------------- */
+
+@media (max-width: 768px) {
+  .panel {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .item {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .copyArea {
+    width: 60px;
+  }
+}
