@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.commandHeader {
+  animation: slideUp 0.4s ease-out;
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-primary-subtle);
+}
+
+.commandName {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+}
+
+.syntaxArea,
+.playgroundArea,
+.usageArea,
+.explanationArea {
+  animation: fadeIn 0.4s ease-out;
+}
