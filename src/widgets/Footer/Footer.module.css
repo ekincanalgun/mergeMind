@@ -1,0 +1,21 @@
+.footer {
+  background-color: var(--color-surface);
+  border-top: 2px solid var(--color-primary-subtle);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.content {
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.tagline {
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  margin-top: var(--space-2xs);
+  opacity: 0.7;
+}
