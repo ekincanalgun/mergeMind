@@ -1,0 +1,130 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-navbar);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  flex: 1;
+  position: relative;
+}
+
+.aside {
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  position: sticky;
+  top: var(--navbar-height);
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+}
+
+.main {
+  overflow-y: auto;
+  padding: var(--space-xl);
+  min-height: calc(100vh - var(--navbar-height));
+  background-color: var(--color-darker);
+}
+
+.footer {
+  margin-top: auto;
+}
+
+/* --------------- Hamburger Menu (Mobil) --------------- */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: var(--space-sm);
+  cursor: pointer;
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-navbar);
+}
+
+.hamburgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+}
+
+/* --------------- Overlay (Mobil) --------------- */
+
+.overlay {
+  display: none;
+}
+
+/* --------------- Sidebar Placeholder --------------- */
+
+.sidebarPlaceholder {
+  padding: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* --------------- Responsive: Tablet --------------- */
+
+@media (max-width: 1199px) {
+  .content {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .aside {
+    width: 220px;
+  }
+}
+
+/* --------------- Responsive: Mobil --------------- */
+
+@media (max-width: 767px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: var(--z-sidebar);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .asideOpen {
+    transform: translateX(0);
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(26, 43, 46, 0.3);
+    z-index: var(--z-overlay);
+  }
+
+  .main {
+    padding: var(--space-md);
+  }
+}
