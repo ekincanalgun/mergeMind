@@ -1,0 +1,185 @@
+/* ============================================
+   ExplanationPanel - Sade Açıklama Paneli
+   ============================================ */
+
+.panel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-surface);
+}
+
+/* --------------- Başlık --------------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* --------------- İçerik --------------- */
+
+.content {
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+}
+
+.paragraph {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline Code */
+.inlineCode {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(230, 100, 20, 0.12);
+  white-space: nowrap;
+}
+
+/* --------------- İpuçları ve Uyarılar --------------- */
+
+.footer {
+  padding: var(--space-sm) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.sectionIcon {
+  flex-shrink: 0;
+}
+
+/* --- İpuçları --- */
+
+.tipsSection {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: rgba(0, 168, 168, 0.04);
+  border: 1px solid rgba(0, 168, 168, 0.12);
+}
+
+.tipsSection .sectionIcon {
+  stroke: var(--color-accent);
+}
+
+.tipList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tipItem {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.tipItem::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* --- Uyarılar --- */
+
+.warningsSection {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: rgba(230, 100, 20, 0.03);
+  border: 1px solid rgba(230, 100, 20, 0.10);
+}
+
+.warningsSection .sectionIcon {
+  stroke: var(--color-primary);
+}
+
+.warningList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.warningItem {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.warningItem::before {
+  content: '!';
+  position: absolute;
+  left: 2px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* --------------- Responsive --------------- */
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .content {
+    padding: var(--space-md);
+  }
+
+  .footer {
+    padding: var(--space-xs) var(--space-md) var(--space-md);
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+}

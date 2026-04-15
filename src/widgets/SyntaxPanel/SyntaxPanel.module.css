@@ -1,0 +1,64 @@
+/* ============================================
+   SyntaxPanel - Örnek Kullanım Mini Akışı
+   ============================================ */
+
+.panel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-surface);
+}
+
+/* --------------- Mini Terminal Akışı --------------- */
+
+.flowSection {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.flowLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.flowBlock {
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 0.84rem;
+  line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.flowCmd {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.flowOut {
+  color: #6b7280;
+  font-weight: 400;
+  padding-left: 18px;
+}
+
+/* --------------- Responsive --------------- */
+
+@media (max-width: 768px) {
+  .flowSection {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .flowBlock {
+    font-size: 0.78rem;
+    padding: 12px 14px;
+  }
+}
